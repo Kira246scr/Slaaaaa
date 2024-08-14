@@ -1,0 +1,25 @@
+-- Defina a cor vermelha para o texto
+local RED_COLOR = Color3.new(1, 0, 0)
+
+-- Função para alterar a velocidade do jogador
+local function setPlayerSpeed(player, speed)
+    local character = player.Character
+    if character then
+        local humanoid = character:FindFirstChild("Humanoid")
+        if humanoid then
+            humanoid.WalkSpeed = speed
+        end
+    end
+end
+
+-- Exemplo: altere a velocidade para 50
+setPlayerSpeed(game.Players.LocalPlayer, 50)
+
+-- Crie uma interface bonita (você pode usar GuiService ou outras bibliotecas)
+-- Por exemplo, crie um texto vermelho
+local playerGui = game.Players.LocalPlayer.PlayerGui
+local textLabel = Instance.new("TextLabel")
+textLabel.Text = "Speed V2"
+textLabel.TextColor3 = RED_COLOR
+textLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
+textLabel.Parent = playerGui
